@@ -246,8 +246,6 @@ elif ps -ef | egrep -v 'grep|openvpn.sh' | grep -q openvpn; then
 else
     mkdir -p /dev/net
     [[ -c /dev/net/tun ]] || mknod -m 0666 /dev/net/tun c 10 200
-    [[ -e $conf ]] || { echo "ERROR: VPN not configured!"; sleep 120; }
-    [[ -e $cert ]] || grep -q '<ca>' $conf ||
-        { echo "ERROR: VPN CA cert missing!"; sleep 120; }
+    [[ -e $conf ]] || { echo "ERROR: VPN not configured!"; exit 1; }
     exec sg vpn -c "openvpn --cd $dir --config $conf"
 fi
