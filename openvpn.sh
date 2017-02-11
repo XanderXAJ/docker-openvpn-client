@@ -202,7 +202,7 @@ The 'command' (if provided and valid) will be run instead of openvpn
 
 dir="/vpn"
 auth="$dir/vpn.cert_auth"
-conf="$dir/vpn.conf"
+conf="$dir/openvpn.ovpn"
 cert="$dir/vpn-ca.crt"
 route="$dir/.firewall"
 route6="$dir/.firewall6"
