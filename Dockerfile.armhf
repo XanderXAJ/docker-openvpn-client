@@ -1,5 +1,4 @@
 FROM resin/armhf-alpine
-MAINTAINER David Personette <dperson@gmail.com>
 
 # Install openvpn
 RUN ["cross-build-start"]
